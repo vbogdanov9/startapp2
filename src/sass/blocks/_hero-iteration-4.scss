@@ -1,0 +1,72 @@
+/* hero iteration 4 */
+
+.hero-iteration-4 {
+  position: relative;
+  min-height: 100vh;
+  margin-right: 23.38541667%;
+  padding: 7.552083333% 16.61458333% 0;
+  background-color: var(--hero-bg-color, #e7daf7);
+  .logo {
+    position: absolute;
+    left: 4.07885792%;
+    top: 5.555555556%;
+  }
+  .title {
+    width: max-content;
+    font-family: var(--font-family);
+    font-size: 96px;
+    font-weight: 500;
+    line-height: 1.224em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    position: relative;
+    span {
+      position: relative;
+      z-index: 3;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      width: 440px;
+      height: 54px;
+      background-color: var(--logo-trust-color, #7956a6);
+    }
+  }
+  .granat {
+    display: block;
+    position: absolute;
+    // на макете сверху отступ 319 а вся высота 1080, в процентах это 29.53703704
+    top: 29.53703704%;
+
+    left: 0;
+    transform: translateX(-50%);
+
+    // на макете высота 490, а весь экран 1080, то есть высота будет 45.37037037%
+    height: 45.37037037%;
+
+    //на макете ширина 483 . а поная ширина 1472 в процентах это 32.8125
+    width: 32.8125%;
+
+    border-style: solid;
+    border-top-right-radius: 50%;
+
+    border-radius: 50% 50% 50% 50%;
+
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+      justify-self: center;
+      // object-fit: contain;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+  }
+}

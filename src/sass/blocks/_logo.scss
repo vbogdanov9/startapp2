@@ -1,0 +1,22 @@
+.logo {
+  display: flex;
+  .jas {
+    width: 90px;
+    font-family: var(--third-family, "Syncopate", sans-serif);
+    font-weight: 700;
+    font-size: 31px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: var(--logo-jas-color, #212529);
+  }
+  .trust {
+    width: 137px;
+    font-family: var(--font3, "Zen Dots");
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 74%; /* line-height использовал чтоб подогнать по высоте jas и trust */
+    letter-spacing: 0.04em;
+    color: var(--logo-trust-color, #7956a6);
+    text-align: left;
+  }
+}
