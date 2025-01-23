@@ -18,11 +18,23 @@
 
     top: 16.57407407%;
     left: 81.45380435%;
+
     img {
+      position: relative;
+      z-index: 6;
       height: 100%;
       width: 100%;
       display: block;
       object-fit: cover;
+    }
+    &-shadow {
+      position: absolute;
+      z-index: 3;
+      width: 102.7472527%;
+      height: 66.03174603%;
+      top: 39.36507937%;
+      left: 3.663003663%;
+      background-color: var(--logo-trust-color, #7956a6);
     }
   }
   .menu {
