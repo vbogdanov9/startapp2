@@ -13,7 +13,7 @@ gulp.task("server", function () {
     },
   });
 
-  gulp.watch("src/*.html").on("change", browserSync.reload);
+  // gulp.watch("src/*.html").on("change", browserSync.reload);
 });
 
 gulp.task("styles", function () {
@@ -27,6 +27,7 @@ gulp.task("styles", function () {
       .pipe(gulp.dest("dist/css"))
       .pipe(gulp.dest("src/css"))
       .pipe(browserSync.stream())
+    // .pipe(browserSync.reload({ stream: true }))
   );
 });
 
@@ -34,7 +35,8 @@ gulp.task("html", function () {
   return gulp
     .src("src/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("dist/"));
+    .pipe(gulp.dest("dist/"))
+    .pipe(browserSync.stream());
 });
 
 gulp.task("scripts", function () {

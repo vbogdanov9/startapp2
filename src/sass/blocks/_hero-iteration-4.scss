@@ -3,63 +3,54 @@
 .hero-iteration-4 {
   position: relative;
   min-height: 1080px;
-  // min-height: 100vh;
-  margin-right: 23.38541667%;
-  padding: 7.552083333% 16.61458333% 0 16.35416667%;
-  background-color: var(--hero-bg-color, #e7daf7);
-  .text {
-    margin-top: 40px;
-    // max-width: 530px;
-    max-width: 63.170441%;
-    font-family: Montserrat Alternates;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    text-align: left;
-    p {
-      margin: 0;
+  header {
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    .menu {
+      width: 654px;
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+      }
+      &__link a {
+        color: var(--logo-jas-color, #212529);
+        text-decoration: none;
+        font-family: Montserrat Alternates;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24.38px;
+      }
     }
   }
 
-  .menu {
+  .background {
     position: absolute;
-    top: 5.37037037%;
-    left: 81.72554348%;
-    width: 44.42934783%;
-    ul {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: space-between;
-      list-style-type: none;
-    }
-    &__link a {
-      color: var(--logo-jas-color, #212529);
-      text-decoration: none;
-      font-family: Montserrat Alternates;
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 24.38px;
-      // text-align: right;
-      // text-underline-position: from-font;
-      // text-decoration-skip-ink: none;
-    }
+    z-index: -1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 76.66666667%;
+    background-color: var(--hero-bg-color, #e7daf7);
   }
-  .logo {
-    position: absolute;
-    left: 4.07885792%;
-    top: 5.555555556%;
+
+  .content {
+    margin-left: 16.61458333%;
+    font-family: var(--font-family, "Montserrat Alternates", sans-serif);
   }
+
   .title {
     width: max-content;
-    font-family: var(--font-family, "Montserrat Alternates", sans-serif);
     font-size: 96px;
     font-weight: 500;
     line-height: 1.224em;
     text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
     position: relative;
+    z-index: 10;
     color: var(--title-color, #222222);
     span {
       position: relative;
@@ -77,85 +68,74 @@
       background-color: var(--logo-trust-color, #7956a6);
     }
   }
+
+  .text {
+    margin-top: 40px;
+    max-width: 530px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    p {
+      margin: 0;
+    }
+  }
+
   .become-more-visible {
     margin-top: 40px;
     background-color: var(--button-bg-color, #543c73);
     border: none;
     padding: 0;
     border-radius: 32px;
-    width: 76.16209774%;
+    width: 639px;
     height: 90px;
     color: var(--button-text-color, #f7f7f7);
-    font-family: Montserrat Alternates;
     font-size: 48px;
     font-weight: 400;
-    // line-height: 58.51px;
   }
-  .main-picture {
-    display: block;
+
+  .copyright {
     position: absolute;
-    // на макете высота 630	, а весь экран 1080, то есть  58.33333333%
-    height: 58.33333333%;
+    bottom: 50px;
+    right: 59px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    text-align: left;
+    color: var(--logo-jas-color, #212529);
+  }
 
-    //на макете ширина 546 . а  ширина полная 1472 , 546*100/1472 = 37.0923913%
-    width: 37.0923913%;
-
+  .main-picture {
+    position: absolute;
+    height: 630px;
+    width: 546px;
     top: 16.57407407%;
-    left: 81.45380435%;
-
-    img {
-      position: relative;
-      z-index: 6;
-      height: 100%;
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
+    left: 62.44791667%;
+    background-image: url("../images/Main_picture.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 4;
     &-shadow {
       position: absolute;
       z-index: 3;
-      width: 102.7472527%;
-      height: 66.03174603%;
-      top: 39.36507937%;
-      left: 3.663003663%;
+      width: 561px;
+      height: 416px;
+      top: 39.53703704%;
+      left: 63.48958333%;
       background-color: var(--button-bg-color, #543c73);
     }
   }
+
   .granat {
-    display: block;
     position: absolute;
-
-    // на макете высота 490, а весь экран 1080, то есть высота будет 45.37037037%
-    height: 45.37037037%;
-
-    //на макете ширина 483 . а полная ширина (1920 25.15625 %), с учетом марджин 1472 32.8125%
-    width: 32.8125%;
-
+    height: 491px;
+    width: 242px;
     // на макете сверху отступ 319 а вся высота 1080, в процентах это 29.53703704
     top: 29.53703704%;
-
     left: 0;
-    transform: translateX(-50%);
-
-    border-radius: 50% 50% 50% 50%;
-    overflow: hidden;
-
-    img {
-      height: 100%;
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      transform: scaleX(-1);
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--granat-picture-background, #ebf9fa);
-      mix-blend-mode: multiply; /* Режим наложения */
-    }
+    background-image: url("../images/granat_242_491.png");
+    border-top-right-radius: 100% 50%;
+    border-bottom-right-radius: 100% 50%;
   }
 }
