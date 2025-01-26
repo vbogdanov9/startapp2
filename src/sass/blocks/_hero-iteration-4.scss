@@ -71,7 +71,8 @@
 
   .text {
     margin-top: 40px;
-    max-width: 530px;
+    // max-width: 530px;
+    max-width: 33.10430981%;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
@@ -87,7 +88,8 @@
     border: none;
     padding: 0;
     border-radius: 32px;
-    width: 639px;
+    // width: 639px;
+    width: 39.91255465%;
     height: 90px;
     color: var(--button-text-color, #f7f7f7);
     font-size: 48px;
@@ -107,23 +109,36 @@
 
   .main-picture {
     position: absolute;
+    // display: flex;
+    top: 16.57407407%;
+    // left: 62.44791667%;
+    right: 9.114583333%;
     height: 630px;
     width: 546px;
-    top: 16.57407407%;
-    left: 62.44791667%;
-    background-image: url("../images/Main_picture.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 4;
-    &-shadow {
-      position: absolute;
-      z-index: 3;
-      width: 561px;
-      height: 416px;
-      top: 39.53703704%;
-      left: 63.48958333%;
-      background-color: var(--button-bg-color, #543c73);
+    // height: 58.33333333%;
+    // width: 28.4375%;
+    .picture {
+      // position: relative;
+      height: 100%;
+      width: 100%;
+      background-image: url("../images/Main_picture.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      // z-index: 4;
+      .shadow {
+        position: relative;
+        z-index: -1;
+        width: 102.7472527%;
+        height: 66.03174603%;
+        top: 39.36507937%;
+        left: 3.663003663%;
+        // width: 561px;
+        // height: 416px;
+        // top: 248px;
+        // left: 20px;
+        background-color: var(--button-bg-color, #543c73);
+      }
     }
   }
 
@@ -137,5 +152,64 @@
     background-image: url("../images/granat_242_491.png");
     border-top-right-radius: 100% 50%;
     border-bottom-right-radius: 100% 50%;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .hero-iteration-4 {
+    .main-picture {
+      top: 20%;
+      .picture {
+        justify-self: right;
+        height: 80%;
+        width: 80%;
+      }
+    }
+    .become-more-visible {
+      font-size: 36px;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .hero-iteration-4 {
+    .text {
+      font-size: 18px;
+      max-width: 40%;
+    }
+    .main-picture {
+      top: 30%;
+      .picture {
+        height: 60%;
+        width: 60%;
+      }
+    }
+    .granat {
+      height: 295px;
+      width: 145px;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .hero-iteration-4 {
+    header {
+      padding: 40px;
+    }
+    .title {
+      font-size: 62px;
+    }
+    .become-more-visible {
+      font-size: 24px;
+      height: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-iteration-4 {
+    .text {
+      font-size: 16px;
+    }
   }
 }
