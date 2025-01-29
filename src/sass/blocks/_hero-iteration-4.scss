@@ -226,10 +226,6 @@
     .main-picture {
       bottom: 0%;
       right: 5%;
-      .picture {
-        height: 40%;
-        width: 40%;
-      }
     }
   }
 }
@@ -278,6 +274,12 @@
     }
     .granat {
       display: none;
+    }
+    .main-picture {
+      .picture {
+        height: 40%;
+        width: 40%;
+      }
     }
   }
 }
