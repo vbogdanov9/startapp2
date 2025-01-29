@@ -1,5 +1,6 @@
 .logo {
   display: flex;
+  justify-content: flex-start;
   .jas {
     width: 90px;
     font-family: var(--third-family, "Syncopate", sans-serif);
