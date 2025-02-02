@@ -3,6 +3,7 @@
 .hero-iteration-4 {
   position: relative;
   min-height: 1080px;
+  padding: 0;
 
   header {
     padding: 60px;
@@ -219,7 +220,7 @@
 @media screen and (max-width: 1400px) {
   .hero-iteration-4 {
     header {
-      padding: 40px;
+      padding: 20px;
     }
     .content {
       .title {
@@ -273,6 +274,14 @@
         width: auto;
         &-full {
           display: none;
+        }
+        &-full.burger-open {
+          display: block;
+          position: fixed;
+          right: 0;
+        }
+        &__link {
+          padding: 5px;
         }
         &-burger {
           align-self: center;

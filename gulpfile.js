@@ -1,12 +1,15 @@
 const gulp = require("gulp");
 const browserSync = require("browser-sync");
+// var gulp = require("gulp");
+// var browserSync = require("browser-sync");
 const sass = require("gulp-sass")(require("sass"));
 const rename = require("gulp-rename");
 const autoprefixer = require("gulp-autoprefixer");
 const htmlmin = require("gulp-htmlmin");
 
 gulp.task("server", function () {
-  browserSync({
+  browserSync.init({
+    // browserSync({
     server: {
       baseDir: "dist",
       // baseDir: "src",
@@ -26,45 +29,60 @@ gulp.task("styles", function () {
       // .pipe(cleanCSS({ compatibility: "ie8" }))
       .pipe(gulp.dest("dist/css"))
       .pipe(gulp.dest("src/css"))
-      .pipe(browserSync.stream())
-    // .pipe(browserSync.reload({ stream: true }))
+      // .pipe(browserSync.stream())
+      .pipe(browserSync.reload({ stream: true }))
   );
 });
 
 gulp.task("html", function () {
-  return gulp
-    .src("src/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("dist/"))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src("src/*.html")
+      .pipe(htmlmin({ collapseWhitespace: true }))
+      .pipe(gulp.dest("dist/"))
+      // .pipe(browserSync.stream())
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 gulp.task("scripts", function () {
-  return gulp
-    .src("src/js/**/*.js")
-    .pipe(gulp.dest("dist/js"))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src("src/js/**/*.js")
+      .pipe(gulp.dest("dist/js"))
+      // .pipe(browserSync.stream())
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 gulp.task("fonts", function () {
-  return gulp
-    .src("src/fonts/**/*", { encoding: false })
-    .pipe(gulp.dest("dist/fonts"))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src("src/fonts/**/*", { encoding: false })
+      .pipe(gulp.dest("dist/fonts"))
+      // .pipe(browserSync.stream())
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 gulp.task("icons", function () {
-  return gulp
-    .src("src/icons/**/*", { encoding: false })
-    .pipe(gulp.dest("dist/icons"))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src("src/icons/**/*", { encoding: false })
+      .pipe(gulp.dest("dist/icons"))
+      // .pipe(browserSync.stream())
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 gulp.task("images", function () {
-  return gulp
-    .src("src/images/**/*", { encoding: false })
-    .pipe(gulp.dest("dist/images"))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src("src/images/**/*", { encoding: false })
+      .pipe(gulp.dest("dist/images"))
+      // .pipe(browserSync.stream())
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 gulp.task("watch", function () {
@@ -74,6 +92,7 @@ gulp.task("watch", function () {
   gulp.watch("src/fonts/**/*").on("all", gulp.parallel("fonts"));
   gulp.watch("src/icons/**/*").on("all", gulp.parallel("icons"));
   gulp.watch("src/images/**/*").on("all", gulp.parallel("images"));
+
   // копирует css но я ээто в самом css прописал
   // gulp.watch("src/css/**/*").on("all", gulp.parallel("css"));
 });

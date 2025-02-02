@@ -4,8 +4,26 @@
 
 @import "blocks/logo";
 
+section {
+  min-height: 300px;
+  padding: 40px;
+}
+
 @import "blocks/hero-iteration-4";
 
+.services {
+  background-color: var(--hero-bg-color, #e7daf7);
+}
+
+.portfolio {
+  background-color: var(--hero-bg-color, #e7daf7);
+}
+
+.contacts {
+  background-color: var(--hero-bg-color, #e7daf7);
+}
+
+// вспомогательные
 .empty {
   height: 350px;
 }
