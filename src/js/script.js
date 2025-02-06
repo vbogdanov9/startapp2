@@ -1,17 +1,32 @@
 //высота header
 const headerNode = document.querySelector("header");
-headerNode.parentNode.style.paddingTop = headerNode.offsetHeight + "px";
+const headerHeight = headerNode.offsetHeight;
+headerNode.parentNode.style.paddingTop = headerHeight + "px";
+
+//отменяем стандартное поведение ссылок
+
+const aTagMenuLinks = document.querySelectorAll("a[data-goto]");
+aTagMenuLinks.forEach((aTagMenuLink) => {
+  aTagMenuLink.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+});
 
 //ссылки навигации, прокрутка при клике
-const menuLinks = document.querySelectorAll("a[data-goto]");
-// console.log("menuLinks = ", menuLinks);
+const menuLinks = document.querySelectorAll(".menu__link");
+
 if (menuLinks.length > 0) {
   menuLinks.forEach((menuLink) => {
-    menuLink.addEventListener("click", (e) => {
-      // console.log(e);
-      // console.log(menuLink);
-      gotoBlock = document.querySelector(menuLink.dataset.goto);
-      console.log("gotoBlock = ", gotoBlock);
+    menuLink.addEventListener("click", () => {
+      aLinkGoto = menuLink.querySelector("a[data-goto]");
+      const gotoClass = aLinkGoto.dataset.goto;
+      const gotoBlock = document.querySelector(gotoClass);
+
+      // единичку добавил чтоб убрать зазор после header
+      const gotoBlockValue =
+        gotoBlock.getBoundingClientRect().top + scrollY - headerHeight + 1;
+
+      window.scrollTo({ top: gotoBlockValue, behavior: "smooth" });
     });
   });
 
