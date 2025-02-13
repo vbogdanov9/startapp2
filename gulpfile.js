@@ -15,9 +15,6 @@ gulp.task("server", function () {
       // baseDir: "src",
     },
   });
-
-  // так запускать тоже не помогло
-  // gulp.parallel("styles", "scripts", "fonts", "html", "images", "icons");
 });
 
 gulp.task("styles", function () {
@@ -97,20 +94,35 @@ gulp.task("watch", function () {
   // gulp.watch("src/css/**/*").on("all", gulp.parallel("css"));
 });
 
+// тестировал различные способы запуска
+// gulp.task(
+//   "start",
+//   gulp.series("styles", "scripts", "fonts", "html", "images", "icons")
+// );
+
+gulp.task("listen", gulp.parallel("watch", "server"));
+
 gulp.task(
   "default",
-  gulp.parallel(
-    "server",
-    "watch",
-    "styles",
-    "scripts",
-    "fonts",
-    "html",
-    "images",
-    // "icons"
-  )
+  gulp.series("styles", "scripts", "fonts", "html", "images", "icons", "listen")
 );
 
+// так запускали изначально, иногда падал с ошибкой msg is not a ffunction
+// gulp.task(
+//   "default",
+//   gulp.parallel(
+//     "server",
+//     "watch",
+//     "styles",
+//     "scripts",
+//     "fonts",
+//     "html",
+//     "images",
+//     "icons"
+//   )
+// );
+
+//=============== предыдущие варианты
 // копирование css
 // gulp.task("css", function () {
 // 	return gulp
