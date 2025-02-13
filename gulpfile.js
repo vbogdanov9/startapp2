@@ -107,7 +107,7 @@ gulp.task(
     "fonts",
     "html",
     "images",
-    "icons"
+    // "icons"
   )
 );
 

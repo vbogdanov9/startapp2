@@ -1,5 +1,9 @@
 /* hero iteration 4 */
 
+body._lock {
+  overflow: hidden;
+}
+
 .hero-iteration-4 {
   position: relative;
   min-height: 1080px;
@@ -302,8 +306,10 @@
             right: 10px;
           }
 
-          z-index: 2;
-          overflow: auto;
+          // пытался сделать скроллинг на открытом меню - не получлось
+          // height: 100vh;
+          // z-index: 2;
+          // overflow: auto;
         }
         &-full {
           display: block;
@@ -346,15 +352,40 @@
           padding: 5px 9px;
           border-radius: 15px;
           cursor: pointer;
+
           .burger__line {
             width: 100%;
             height: 4px;
+            border-radius: 1px;
             background-color: var(--logo-trust-color, #7956a6);
+            transition: all 0.3s ease;
           }
           &:hover {
             background-color: var(--logo-trust-color, #7956a6);
             .burger__line {
               background-color: var(--hero-bg-color, #e7daf7);
+            }
+          }
+          &._active {
+            display: block;
+            position: relative;
+            background-color: var(--logo-trust-color, #7956a6);
+            .burger__line {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              background-color: var(--hero-bg-color, #e7daf7);
+              &:first-child {
+                transform: rotate(-45deg);
+              }
+              &:nth-child(2) {
+                // display: none;
+                width: 0;
+                left: auto;
+              }
+              &:nth-child(3) {
+                transform: rotate(45deg);
+              }
             }
           }
         }

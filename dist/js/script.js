@@ -17,6 +17,13 @@ if (menuLinks.length > 0) {
       const gotoBlockValue =
         gotoBlock.getBoundingClientRect().top + scrollY - headerHeight + 1;
 
+      // если было активно меню бургер делаем неактивным
+      if (burger.classList.contains("_active")) {
+        document.body.classList.remove("_lock");
+        burger.classList.remove("_active");
+        menuBody.classList.remove("show");
+      }
+
       window.scrollTo({ top: gotoBlockValue, behavior: "smooth" });
     });
   });
@@ -25,9 +32,15 @@ if (menuLinks.length > 0) {
 // burger
 const burger = document.querySelector(".menu-burger");
 const menuBody = document.querySelector(".menu-body");
-burger.addEventListener("click", () => {
-  menuBody.classList.toggle("show");
-});
+if (burger && menuBody) {
+  burger.addEventListener("click", () => {
+    document.body.classList.toggle("_lock");
+
+    burger.classList.toggle("_active");
+
+    menuBody.classList.toggle("show");
+  });
+}
 
 //=========================================
 
