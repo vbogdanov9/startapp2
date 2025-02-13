@@ -16,7 +16,8 @@ gulp.task("server", function () {
     },
   });
 
-  // gulp.watch("src/*.html").on("change", browserSync.reload);
+  // так запускать тоже не помогло
+  // gulp.parallel("styles", "scripts", "fonts", "html", "images", "icons");
 });
 
 gulp.task("styles", function () {
@@ -26,7 +27,6 @@ gulp.task("styles", function () {
       .pipe(sass({ style: "compressed" }).on("error", sass.logError))
       .pipe(rename({ suffix: ".min", prefix: "" }))
       .pipe(autoprefixer())
-      // .pipe(cleanCSS({ compatibility: "ie8" }))
       .pipe(gulp.dest("dist/css"))
       .pipe(gulp.dest("src/css"))
       // .pipe(browserSync.stream())
@@ -100,14 +100,14 @@ gulp.task("watch", function () {
 gulp.task(
   "default",
   gulp.parallel(
-    "watch",
     "server",
+    "watch",
     "styles",
     "scripts",
     "fonts",
-    "icons",
     "html",
-    "images"
+    "images",
+    "icons"
   )
 );
 

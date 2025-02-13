@@ -28,13 +28,15 @@
         justify-content: space-between;
         list-style-type: none;
       }
-      &__link a {
-        color: var(--logo-jas-color, #212529);
-        text-decoration: none;
+      &__link {
         font-family: Montserrat Alternates;
         font-size: 20px;
         font-weight: 600;
         line-height: 24.38px;
+      }
+      a {
+        text-decoration: none;
+        color: var(--logo-jas-color, #212529);
         &:hover {
           text-decoration: underline;
         }
@@ -284,20 +286,37 @@
       justify-content: space-between;
       .menu {
         width: auto;
-        &-full {
-          display: none;
-        }
-        &-full.burger-open {
-          display: block;
+        &-body {
           position: fixed;
-          right: 10px;
+          // right: 10px;
           top: 80px;
+          // visibility: hidden;
+          right: -100%;
+          transition: right 0.4s ease;
+
+          padding: 10px;
+          background-color: rgba(255, 255, 255, 0.5);
+          // background-color: rgba(0, 0, 0, 0.5);
+          border-radius: 20px;
+          &.show {
+            right: 10px;
+          }
+
+          z-index: 2;
+          overflow: auto;
+        }
+        &-full {
+          display: block;
+          // max-height: 100%;
+          // overflow-y: scroll;
+          // overflow: auto;
         }
         &__link {
           padding: 5px 10px;
           border: 2px solid var(--hero-bg-color, #e7daf7);
-          border-radius: 20px;
+          border-radius: 19px;
           background-color: var(--logo-trust-color, #7956a6);
+          font-size: 26px;
           // a {
           //   color: var(--button-text-color, #f7f7f7);
           // }
@@ -316,8 +335,8 @@
           }
         }
         &-burger {
-          align-self: center;
           display: flex;
+          align-self: center;
           flex-direction: column;
           justify-content: space-around;
           // justify-content: space-between;
