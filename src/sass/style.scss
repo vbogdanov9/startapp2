@@ -9,6 +9,8 @@ section {
   padding: 40px;
 }
 
+@import "blocks/header";
+
 @import "blocks/hero-iteration-4";
 
 .services {
@@ -16,7 +18,7 @@ section {
 }
 
 .portfolio {
-  background-color: var(--hero-bg-color, #e7daf7);
+  background-color: var(--hero-bg-color, #341955);
 }
 
 .contacts {

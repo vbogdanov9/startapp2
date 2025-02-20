@@ -100,6 +100,7 @@ gulp.task("watch", function () {
 //   gulp.series("styles", "scripts", "fonts", "html", "images", "icons")
 // );
 
+// так пофиксил запуск  gulp, добавил задачу listen
 gulp.task("listen", gulp.parallel("watch", "server"));
 
 gulp.task(
@@ -107,7 +108,7 @@ gulp.task(
   gulp.series("styles", "scripts", "fonts", "html", "images", "icons", "listen")
 );
 
-// так запускали изначально, иногда падал с ошибкой msg is not a ffunction
+// так запускали изначально, иногда падал с ошибкой msg is not a function
 // gulp.task(
 //   "default",
 //   gulp.parallel(
