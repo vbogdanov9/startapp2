@@ -3,15 +3,17 @@
 @import "base/variables";
 
 @import "blocks/logo";
+@import "blocks/header";
 
 section {
   min-height: 300px;
   padding: 40px;
 }
 
-@import "blocks/header";
 
 @import "blocks/hero-iteration-4";
+
+@import "blocks/hero-iteration";
 
 .services {
   background-color: var(--hero-bg-color, #e7daf7);

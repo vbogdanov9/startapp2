@@ -1,0 +1,157 @@
+.hero-iteration {
+  background-color: var(--button-text-color, #f7f7f7);
+  position: relative;
+  min-height: 1080px;
+  // padding: 177px 45px 181px 319px;
+  padding: 16.38888889% 2.34375% 16.75925926% 16.61458333%;
+  font-family: var(--font-family, "Montserrat Alternates", sans-serif);
+
+  .title {
+    width: max-content;
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1.218958333em;
+    text-align: left;
+    color: var(--title-color, #222222);
+  }
+
+  // .text {
+  //   margin-top: 40px;
+  //   // max-width: 530px;
+  //   max-width: 33.10430981%;
+  //   font-size: 20px;
+  //   font-weight: 400;
+  //   line-height: 1.5em;
+  //   text-align: left;
+  //   p {
+  //     margin: 0;
+  //   }
+  // }
+
+  // .become-more-visible {
+  //   margin-top: 40px;
+  //   background-color: var(--button-bg-color, #543c73);
+  //   border: none;
+  //   padding: 0;
+  //   border-radius: 32px;
+  //   // width: 639px;
+  //   width: 39.91255465%;
+  //   height: 90px;
+  //   color: var(--button-text-color, #f7f7f7);
+  //   font-size: 48px;
+  //   font-weight: 400;
+  // }
+
+  // .content {
+  //   margin-left: 16.61458333%;
+  //   font-family: var(--font-family, "Montserrat Alternates", sans-serif);
+  //   position: relative;
+  //   z-index: 10;
+  // }
+
+  // .main-picture {
+  //   position: absolute;
+  //   top: 16.57407407%;
+  //   right: 9.114583333%;
+  //   height: 630px;
+  //   width: 546px;
+
+  //   .picture {
+  //     position: relative;
+  //     height: 100%;
+  //     width: 100%;
+  //     background-image: url("../images/Main_picture.png");
+  //     background-position: center;
+  //     background-repeat: no-repeat;
+  //     background-size: cover;
+  //     z-index: 2;
+  //     .shadow {
+  //       position: relative;
+  //       z-index: 1;
+  //       width: 102.7472527%;
+  //       height: 66.03174603%;
+  //       top: 39.36507937%;
+  //       left: 3.663003663%;
+  //       background-color: var(--button-bg-color, #543c73);
+  //     }
+  //   }
+  // }
+
+  // .copyright {
+  //   position: absolute;
+  //   bottom: 50px;
+  //   right: 59px;
+  //   font-size: 14px;
+  //   font-weight: 500;
+  //   line-height: 1.214285714em;
+  //   text-align: left;
+  //   color: var(--logo-jas-color, #212529);
+  // }
+}
+
+@media screen and (max-width: 1400px) {
+  .hero-iteration {
+    .content {
+      .title {
+        font-size: 4.5rem;
+      }
+      // .become-more-visible {
+      //   font-size: 24px;
+      //   height: 60px;
+      // }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero-iteration {
+    .content {
+      // .text {
+      //   font-size: 14px;
+      //   max-width: 450px;
+      // }
+      .title {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-iteration {
+    // .background {
+    //   width: 96%;
+    //   left: auto;
+    //   right: 0;
+    // }
+    .content {
+      // margin: 0;
+      // padding: 0 5% 0 5%;
+      // .text {
+      //   // font-size: 14px;
+      //   max-width: 360px;
+      // }
+      .title {
+        font-size: 3rem;
+        // margin-right: auto;
+        // margin-left: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero-iteration {
+    .content {
+      // margin: 0;
+      // padding-left: 7%;
+      // padding-right: 7%;
+      .title {
+        font-size: 2.25rem;
+      }
+    }
+    .copyright {
+      // font-size: 12px;
+    }
+  }
+}

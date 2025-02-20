@@ -1,4 +1,4 @@
-//высота header добавляем в паддинг родительскому элементу
+//высоту header добавляем в паддинг родительскому элементу
 const headerNode = document.querySelector("header");
 const headerHeight = headerNode.offsetHeight;
 headerNode.parentNode.style.paddingTop = headerHeight + "px";
@@ -7,15 +7,16 @@ headerNode.parentNode.style.paddingTop = headerHeight + "px";
 const menuLinks = document.querySelectorAll(".menu__link");
 if (menuLinks.length > 0) {
   menuLinks.forEach((menuLink) => {
+    aLinkGoto = menuLink.querySelector("a[data-goto]");
+    const gotoClass = aLinkGoto.dataset.goto;
+    const gotoBlock = document.querySelector(gotoClass);
+
+    // единичку добавил в конце, чтоб убрать зазор после header
+    const gotoBlockValue =
+      gotoBlock.getBoundingClientRect().top + scrollY - headerHeight + 1;
+
     menuLink.addEventListener("click", (e) => {
       e.preventDefault();
-      aLinkGoto = menuLink.querySelector("a[data-goto]");
-      const gotoClass = aLinkGoto.dataset.goto;
-      const gotoBlock = document.querySelector(gotoClass);
-
-      // единичку добавил в конце, чтоб убрать зазор после header
-      const gotoBlockValue =
-        gotoBlock.getBoundingClientRect().top + scrollY - headerHeight + 1;
 
       // если было активно меню бургер делаем неактивным
       if (burger.classList.contains("_active")) {
@@ -35,9 +36,7 @@ const menuBody = document.querySelector(".menu-body");
 if (burger && menuBody) {
   burger.addEventListener("click", () => {
     document.body.classList.toggle("_lock");
-
     burger.classList.toggle("_active");
-
     menuBody.classList.toggle("show");
   });
 }
