@@ -1,0 +1,51 @@
+.hero-from-idea {
+  position: relative;
+  padding: 0;
+  height: 1080px;
+  .logo {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+  }
+  &__main-picture {
+    position: absolute;
+    width: 640px;
+    height: 607px;
+    top: 203px;
+    left: 640px;
+    background-image: url("../images/Main_picture_office.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__red_rectangle {
+    position: absolute;
+    width: 400px;
+    height: 361px;
+    top: 269px;
+    left: 1280px;
+    background: linear-gradient(0deg, #dc1147, #dc1147),
+      linear-gradient(0deg, rgba(110, 46, 190, 0.19), rgba(110, 46, 190, 0.19));
+  }
+  &__round-granat {
+    position: absolute;
+    width: 274px;
+    height: 270px;
+    top: 405px;
+    left: 1303px;
+    background-color: #4c65a3;
+    border-radius: 50%;
+    background-image: url("../images/granat_from_idea.png");
+    background-position-y: center;
+    background-repeat: no-repeat;
+  }
+  &__arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 19%;
+    width: 52px;
+    height: 35px;
+    background-image: url("../icons/arrow-right.svg");
+  }
+}
