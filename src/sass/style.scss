@@ -10,7 +10,6 @@ section {
   padding: 40px;
 }
 
-
 @import "blocks/hero-iteration-4";
 
 @import "blocks/hero-iteration";
@@ -28,6 +27,13 @@ section {
 }
 
 // вспомогательные
-.empty {
-  height: 350px;
-}
+// .empty {
+//   border: solid #341955;
+//   height: 350px;
+//   width: 1000px;
+//   .child {
+//     border: solid #341955;
+//     height: 100%;
+//     padding-top: 10%;
+//   }
+// }

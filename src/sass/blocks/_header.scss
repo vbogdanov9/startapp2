@@ -3,12 +3,12 @@ header {
   // position: sticky;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 30;
   width: 100%;
-  background-color: var(--hero-bg-color, #e7daf7);
-  // background-color: var(--bd-color-rgba, #e7daf780);
+  // background-color: var(--hero-bg-color, #e7daf7);
+  background-color: var(--header-bg-color, rgba(255, 255, 255, 0.8));
 
-  padding: 60px;
+  padding: 60px 60px 0 60px;
   display: flex;
   justify-content: space-between;
 
