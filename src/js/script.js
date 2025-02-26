@@ -5,6 +5,7 @@ headerNode.parentNode.style.paddingTop = headerHeight + "px";
 
 //ссылки навигации, прокрутка при клике
 const menuLinks = document.querySelectorAll(".menu__link");
+// const burger = document.querySelector(".menu-burger");
 if (menuLinks.length > 0) {
   menuLinks.forEach((menuLink) => {
     aLinkGoto = menuLink.querySelector("a[data-goto]");
@@ -34,12 +35,44 @@ if (menuLinks.length > 0) {
 const burger = document.querySelector(".menu-burger");
 const menuBody = document.querySelector(".menu-body");
 if (burger && menuBody) {
-  burger.addEventListener("click", () => {
+  burger.addEventListener("click", (e) => {
+    // console.log(e);
     document.body.classList.toggle("_lock");
     burger.classList.toggle("_active");
     menuBody.classList.toggle("show");
   });
 }
+
+// закрываем меню при клике
+const menu = document.querySelector(".menu");
+document.addEventListener("click", (e) => {
+  // console.log(e);
+  if (
+    !e.composedPath().includes(menu) &&
+    burger.classList.contains("_active")
+  ) {
+    document.body.classList.remove("_lock");
+    burger.classList.remove("_active");
+    menuBody.classList.remove("show");
+  }
+});
+
+// скрываем меню при esc
+document.addEventListener("keydown", (e) => {
+  if (e.key == "Escape" && burger.classList.contains("_active")) {
+    document.body.classList.remove("_lock");
+    burger.classList.remove("_active");
+    menuBody.classList.remove("show");
+  }
+});
+//
+//   if (e.composedPath().includes(menuLinks[0])) {
+//     window.scrollTo({ top: gotoBlockValue, behavior: "smooth" });
+//   } else if (burger.classList.contains("_active")) {
+//     document.body.classList.remove("_lock");
+//     burger.classList.remove("_active");
+//     menuBody.classList.remove("show");
+//   }
 
 //=========================================
 
